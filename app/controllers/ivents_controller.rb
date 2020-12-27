@@ -1,0 +1,2 @@
+class IventsController < ApplicationController
+end

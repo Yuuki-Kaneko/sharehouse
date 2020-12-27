@@ -1,0 +1,14 @@
+<div class ="all_contents">
+  <div class ="contents edit_grocery">
+    <div class="new_grocery">
+      <%= form_for @edit do %>
+      <h3>
+        編集する
+      </h3>
+      <input type="text" name="grocery" value="<%= @edit.grocery %>" placeholder="何が足りない？" autofocus="true">
+      <input type="text" name="number" value="<%= @edit.number %>" placeholder="何個？" autofocus:"true">
+      <input type="submit" value="変更">
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="all_contents">
+  <div class="out_contents">
+    <div class="user_show">
+      <div class="user_out_box">
+        <div class="user_in_box">
+    <%= form_for current_user do |f| %>
+    
+    <div class="user_edit_image" >
+      <img src="<%= "#{current_user.image}" %>"
+           onerror="this.src='/uploads/user/image/no-image-3.png'">
+    </div>
+    
+    <div class="image">
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :nickname, "ニックネーム" %> <em>(6字以内)</em><br />
+      <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :full_name, "フルネーム" %><br/>
+      <%= f.text_field :full_name, placeholder: "-", class: "form-control" %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :text, "紹介文" %>
+      <%= f.text_area :text, placeholder: "-" ,size: "30x5" ,class: "form-control" %>
+    </div>
+    
+    <div class="btn_user_edit">
+        <%= f.submit "編集", class: "btn btn-primary withripple" %>
+    </div>
+    
+  <% end %>
+      </div>
+    </div>
+  </div>
+</div>

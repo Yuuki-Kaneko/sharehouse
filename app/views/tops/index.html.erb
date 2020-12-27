@@ -1,0 +1,65 @@
+<div class ="all_contents">
+  <div class ="new_grocery">
+    <%= form_for(@top) do |f| %>
+      <%= f.text_field :grocery, placeholder: "何が足りない？" %>
+      <%= f.text_field :number, placeholder: "いくつ？" %>
+      <%= f.submit "投稿する" %>
+    <% end %>
+  </div>
+  
+  <div class ="contents clearfix">   <!-- clearfix のクラスもここで定義！！   -->
+    <div class ="left_content">
+      
+    <!-- ①食材選択リスト -->
+    <div class ="form">
+    <%= form_for(@buy, url: buys_path, method: :post) do |f| %>
+      <div class ="field_top">
+        <span><%= "#{@month}/#{@day}" %></span></br>
+        <%= f.label :bought, "【購入リスト】" %>
+        <br>
+        <ul>
+        <% @tops.each do |top| %>
+        <%= f.check_box :bought, {multiple: true}, top.id, nil %>
+        <a href="/tops/<%= top.id %>/edit" ><%= "#{top.grocery}　:　#{top.number}" %></a>
+        <a href="/tops/<%= top.id %>" data-method="delete" class ="delete">削除</a>
+        <br>
+        <% end %>
+        </ul>
+     </div>
+     
+      <!-- userも同時選択 -->
+        <%= f.select :user_id, User.all.map { |user| [user.nickname, user.id] } %>
+          <div class="form-group">
+            <%= f.submit '購入', class: 'btn btn-primary btn-block' %>
+          </div>
+    <% end %>
+    </div>
+    <hr>
+   
+    <!-- ③購入物一覧  -->
+    <div class ="bought">
+      <% @bought.each do |bou| %>
+        <p class ="bought_grocery"><%= "#{bou.bought}" %><span><%= " #{time_ago_in_words bou.created_at}前" %></span></p>
+        <p class ="bought_name"><%= "　→ " %><a href="/users/<%= "#{bou.user_id}" %>"><%= "#{bou.user.nickname}" %></a><%= "が購入" %></p>
+      <% end %>
+    </div>
+    
+    </div>
+    
+    <!-- ④ランキング機能 -->
+    <div class ="right_content">
+      <h2>月間購入ランキング</h2>
+        <div class ="inner_rank">
+          <% num = 1 %>
+          <% @rankings.zip(@purchased_numbers) do |rank,number| %>
+          <p>
+          <%= "#{num}" %>位
+          <img src="<%= "#{rank.image}" %>">
+          <a href="/users/<%= "#{rank.id}" %>"><%= "#{rank.nickname}" %></a><span><%="#{number}" %>回購入！</span>
+          </p>
+          <% num += 1 %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

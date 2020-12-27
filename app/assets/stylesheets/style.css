@@ -1,0 +1,212 @@
+body, html {
+   height: 100%;
+   background-color: #D3D3D3;
+ }
+
+ h1, h2, h3, h4, h5, h6, p, body {
+   line-height: 20px;
+   font-size: 18px;
+   color: #4a4a4a;
+   font-family: sans-serif;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ a {
+   color: black;  /*リンクの色は黒で固定 */
+ }
+ 
+ a:hover {
+  color: red;
+}
+ 
+ .wrapper{
+  min-width: 960px;
+  }
+ 
+ .header {
+  background-image: url("menu_2.jpg");
+  height: 50px;
+  background-size: cover;
+  display: flex;
+}
+
+  .header-main {
+    width: 70%;
+    padding-left: 20px;           /*左の余白を作ってる */
+    font-size: 30px;
+    line-height: 20px
+  }
+
+  .header-main .header-name {
+    color: white;
+    text-decoration: none;
+    line-height: 50px
+    
+  }
+
+  .header-sub {
+    font-size: 20px;
+    width: 30%;
+  }
+
+  .header-sub ul {
+    display: flex;										
+    justify-content: center;			/* 中央よせ */
+    margin: 0;
+  }
+  
+  .header-sub li {
+    list-style: none;	
+    border-radius: 5px;
+    margin: 0 30px;
+    line-height: 50px			
+  }
+
+  .header-sub .post {
+    color: white;
+  }
+
+.all_contents {
+  background-color: #D3D3D3;
+}
+
+  .new_grocery {
+    width: 500px;
+    margin: 2px auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: #afa58d;
+  }
+
+  .new_grocery h3 {
+    padding: 10px;
+  }
+
+.contents {
+   background: url("living.jpg") ;
+   background-repeat: no-repeat;
+   background-size: 750px auto;
+   width: 750px;
+   min-width: 750px;
+   margin: 0 auto;
+ }
+
+  .contents p{
+     height: 10px;
+     width: 500px;
+     margin-top: 10px;
+   }
+
+  .left_content {
+     width: 400px;
+     float: left;
+     margin: 10px 0 0 40px;
+   }
+ 
+    .left_content .form {
+       background: rgba(255,255,255,0.4);   /*背景の透かし*/
+       padding: 10px;
+       border-radius: 10px;
+       box-shadow: 0 1px 2px grey;
+     }
+ 
+      .left_content .field_top span {
+         display: inline-block;
+         margin-top: 10px;
+       }
+ 
+      .left_content .field_top label {
+         display: inline-block;
+         margin: 20px 0 0;
+       }
+ 
+      .left_content .field_top ul {
+         margin: 5px;
+         padding: 5px;
+       }
+ 
+      .left_content .field_top a {
+         text-decoration: none;  /*アンダーライン消す*/
+       }
+ 
+      .left_content .field_top .delete{
+         font-size: 10px;
+         color: blue;
+       }
+
+      .field_top select {
+         margin: 5px 10px;
+       }
+
+      .btn {
+         margin-left: 10px;
+       }
+       
+      .edit_grocery {
+          padding: 200px 0;
+      }
+
+  .section {
+    display: flex;
+    justify-content: center;
+  }
+
+.bought {
+   width: 400px;
+   margin: 40px auto;
+   line-height: 17px;
+   padding: 10px;
+}
+
+  .bought span {
+     font-size: 14px;
+  }
+
+  .right_content {
+     margin: 20px 0 0 50px;
+     width: 200px;
+     float: left;
+   }
+ 
+    .right_content h2 {
+       margin: 10px;
+       padding: 5px;
+     }
+ 
+    .right_content .inner_rank {
+       background: rgba(255,180,80,0.7);
+       padding: 5px 5px 15px;
+     }
+ 
+    .right_content p {
+       margin: 5px;
+       padding: 5px;
+     }
+ 
+    .right_content span {
+       font-size: 10px;
+     }
+ 
+    .right_content img {
+       border-radius: 50%;
+       width: 20px;
+       height: 20px;
+     }
+ 
+footer {
+    height: 40px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+.clearfix:after {
+   content: "";
+   clear: both;
+   display: block;
+ }

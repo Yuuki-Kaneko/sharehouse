@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /home/ec2-user/environment/sharehouse/app/controllers/buys_controller.rb:8 BuysController#create:
+
+     [1;34m3[0m: [32mdef[0m [1;34mcreate[0m
+     [1;34m4[0m:     [1;34;4mBuy[0m.create(create_buy)
+     [1;34m5[0m: 
+     [1;34m6[0m:     bought = [1;34;4mBuy[0m.select([31m[1;31m'[0m[31mbought[1;31m'[0m[31m[0m)
+     [1;34m7[0m:     select_bought = bought.last([1;34m1[0m)
+ =>  [1;34m8[0m:     binding.pry
+     [1;34m9[0m:     
+    [1;34m10[0m:     select_bought.uniq.count = [1;34m1[0m
+    [1;34m11[0m:     redirect_to [33m:root[0m, [35mnotice[0m: [31m[1;31m"[0m[31m削除項目を選択してください[1;31m"[0m[31m[0m
+    [1;34m12[0m:     select = []
+    [1;34m13[0m:     select_bought.map{|n|
+    [1;34m14[0m:     select << n
+    [1;34m15[0m:     select.delete([31m[1;31m"[0m[31m0[1;31m"[0m[31m[0m)
+    [1;34m16[0m:     }
+    [1;34m17[0m:     select.each{|id|
+    [1;34m18[0m:     content = [1;34;4mTop[0m.find_by([35mgrocery[0m: id)
+    [1;34m19[0m:     content.destroy
+    [1;34m20[0m:     }
+    [1;34m21[0m:     
+    [1;34m22[0m:     redirect_to [33m:root[0m [32mand[0m [32mreturn[0m
+    [1;34m23[0m:     
+    [1;34m24[0m: [32mend[0m
+

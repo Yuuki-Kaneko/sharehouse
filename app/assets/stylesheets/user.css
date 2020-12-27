@@ -1,0 +1,98 @@
+ .out_contents {
+     width: 100%;
+     padding-top: 30px;
+ }
+ 
+ .user_show {
+     width: 750px;
+     height: 500px;
+     margin: 0 auto;
+     padding-top: 30px;
+     background: url("rocker.jpg") ;
+     background-repeat: no-repeat;
+     background-size: 750px auto;
+ }
+ 
+ .user_out_box {
+     width: 500px;
+     margin: 0 auto;
+     background: rgba(255,255,255,0.6);
+     box-shadow: 0 1px 2px grey;
+ }
+ 
+ .user_in_box {
+     padding: 20px 50px;
+ }
+ 
+ #photo {
+     width: 100px;
+     height: 100px;
+     margin: 0 auto;
+     padding: 30px 0;
+ }
+ 
+ #photo img {
+     border-radius: 50%;
+     width: 100px;
+     height: 100px;
+ }
+ 
+ .user_show h2 {
+     display: block;
+     width: 200px;
+     text-align: center;
+     font-size: 120%;
+     margin: 0 auto;
+     padding: 10px;
+ }
+ 
+ .user_show span {
+     display: block;
+     width: 200px;
+     text-align: center;
+     margin: 0 auto;
+     padding: 20px 10px;
+ }
+ 
+ .user_show section {
+     width: 300px;
+     height: 40px;
+     line-height: 60px;
+     margin: 0 auto;
+ }
+ 
+ .user_show p {
+     margin: 5px auto;
+     padding: 5px 0 25px;
+     max-width: 300px;
+     line-height: 17px;
+     top: 10px;
+     left: 10px;
+     white-space: pre-wrap;
+     text-align: left;
+     text-align-last: left;
+     overflow-wrap: break-word;
+ }
+
+ .user_edit_image img {
+       display: inline-block;
+       border-radius: 50%;
+       width: 80px;
+       height: 80px;
+       margin: 0 0 10px 13px;
+     }
+  
+ .image {
+       margin-bottom: 10px;
+ }
+ 
+ .btn_user_edit {
+      margin-top: 100px;
+ }
+ 
+ .home {
+     display: block;
+     width: 150px;
+     margin-top: 15px;
+     margin-left: 500px;
+ }

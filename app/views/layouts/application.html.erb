@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sharehouse</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+    <header class="header">
+      <div class="header-main">
+        <h1><a class ="header-name"href="/">上賀茂ハウス</a></h1>
+      </div>
+   	  <% if user_signed_in? %>
+     	<div class="header-sub">
+     		<ul>
+      	  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post' %></li>
+      		<li><%= link_to "マイページ", edit_user_path(current_user), class: 'post' %></li>
+        </ul>
+      </div>
+     	<% else %>
+     	<div class="header-sub">
+     		<ul>
+     		  <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+     		  <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+     		</ul>
+    	</div>
+      <% end %>
+    </header>
+  
+    <%= yield %>
+    </div>
+  
+    <footer>
+      <p>borderlesshouse</p>
+      <p>-京都上賀茂-</p>
+    </footer>
+  </body>
+</html>

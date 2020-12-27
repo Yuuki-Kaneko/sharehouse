@@ -1,0 +1,20 @@
+<div class="all_contents">
+  <div class="out_contents">
+    <div class="user_show">
+      <div class="user_out_box">
+      
+        <div id="photo">
+          <img src="<%= "#{@user.image}" %>">
+        </div>
+
+        <h2><%= "#{@user.nickname}" %></h2>
+        <span><%= "#{@user.full_name}" %></span>
+        <section><紹介文></section>
+        <p><%= "#{@user.text}" %></p>
+    
+      </div>
+    
+      <a href="/", class="home">ホームに戻る</a>
+    </div>
+  </div>
+</div>
