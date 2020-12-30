@@ -51,26 +51,27 @@
      width: 200px;
      text-align: center;
      margin: 0 auto;
-     padding: 20px 10px;
+     padding: 5px 10px;
  }
  
  .user_show section {
      width: 300px;
-     height: 40px;
-     line-height: 60px;
-     margin: 0 auto;
+     line-height: 17px;
+     margin: 10px auto 0;
  }
  
  .user_show p {
      margin: 5px auto;
      padding: 5px 0 25px;
      max-width: 300px;
+     max-height: 130;
      line-height: 17px;
      top: 10px;
      left: 10px;
      white-space: pre-wrap;
      text-align: left;
      text-align-last: left;
+     overflow: scroll;
      overflow-wrap: break-word;
  }
 
