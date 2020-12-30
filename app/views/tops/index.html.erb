@@ -39,8 +39,10 @@
     <!-- ③購入物一覧  -->
     <div class ="bought">
       <% @bought.each do |bou| %>
-        <p class ="bought_grocery"><%= "#{bou.bought}" %><span><%= " #{time_ago_in_words bou.created_at}前" %></span></p>
-        <p class ="bought_name"><%= "　→ " %><a href="/users/<%= "#{bou.user_id}" %>"><%= "#{bou.user.nickname}" %></a><%= "が購入" %></p>
+        <div class="bought_box">
+          <p><%= "#{bou.bought}" %><span><%= " #{time_ago_in_words bou.created_at}前" %></span></p>
+          <p class="bought_name"><%= "　→ " %><a href="/users/<%= "#{bou.user_id}" %>"><%= "#{bou.user.nickname}" %></a><%= "が購入" %></p>
+        </div>
       <% end %>
     </div>
     
