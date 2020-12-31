@@ -4,6 +4,7 @@ class TopsController < ApplicationController
         @top = Top.new
         
         # ②食材選択リスト
+        @year = Time.current.year
         @month = Time.current.month
         @day = Time.current.day
         
@@ -15,7 +16,9 @@ class TopsController < ApplicationController
         @bought = Buy.order('created_at DESC').limit(3)
         
         # ④ランキング機能
-        purchase = Buy.group(:user_id).order('count_user_id DESC').limit(5).count(:user_id)
+        search_date = '@year-@month-@date'  #現在の"年-月-日"を設定
+        this_month = Buy.where(created_at: search_date.in_time_zone.all_month)  #今年の今月のデータを抽出
+        purchase = this_month.group(:user_id).order('count_user_id DESC').limit(5).count(:user_id)
         @purchased_numbers = purchase.values
         @rankings = purchase.keys.map { |id| User.find(id) }
         

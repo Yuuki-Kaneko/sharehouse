@@ -72,7 +72,7 @@ body, html {
 }
 
   .new_grocery {
-    width: 500px;
+    width: 400px;
     margin: 2px auto;
     padding: 10px;
     border: 1px solid;
@@ -90,6 +90,7 @@ body, html {
    background-size: 750px auto;
    width: 750px;
    min-width: 750px;
+   min-height: 435px;
    margin: 0 auto;
  }
 
@@ -154,9 +155,11 @@ body, html {
 
 .bought {
    width: 370px;
+   max-height: 150px;
    margin: 20px auto 10px;
    line-height: 17px;
    padding: 0 10px;
+   overflow: scroll;
 }
 
   .bought .bought_box {
@@ -182,18 +185,20 @@ body, html {
 
   .right_content {
      margin: 20px 0 0 50px;
-     width: 200px;
+     width: 215px;
      float: left;
    }
  
     .right_content h2 {
        margin: 10px;
-       padding: 5px;
+       padding: 0px;
      }
  
     .right_content .inner_rank {
        background: rgba(255,180,80,0.7);
-       padding: 5px 5px 15px;
+       border: 1px solid;
+       max-width: 210px;
+       padding: 5px;
      }
  
     .right_content p {

@@ -21,7 +21,7 @@
         <% @tops.each do |top| %>
         <%= f.check_box :bought, {multiple: true}, top.id, nil %>
         <a href="/tops/<%= top.id %>/edit" ><%= "#{top.grocery}　:　#{top.number}" %></a>
-        <a href="/tops/<%= top.id %>" data-method="delete" class ="delete">削除</a>
+        <a href="/tops/<%= top.id %>" data-method="delete" class ="delete" onclick="return confirm('本当に削除しますか？')" >削除</a>
         <br>
         <% end %>
         </ul>
@@ -50,14 +50,16 @@
     
     <!-- ④ランキング機能 -->
     <div class ="right_content">
-      <h2>月間購入ランキング</h2>
+      <h2><%= "#{@month}" %>月 購入ランキング</h2>
         <div class ="inner_rank">
           <% num = 1 %>
           <% @rankings.zip(@purchased_numbers) do |rank,number| %>
           <p>
           <%= "#{num}" %>位
-          <img src="<%= "#{rank.image}" %>">
-          <a href="/users/<%= "#{rank.id}" %>"><%= "#{rank.nickname}" %></a><span><%="#{number}" %>回購入！</span>
+          <img src="<%= "#{rank.image}" %>"
+               onerror="this.src='/uploads/user/image/no-image-3.png'">
+          <a href="/users/<%= "#{rank.id}" %>"><%= "#{rank.nickname}" %></a><br>
+          <span>[<%="#{number}" %>回購入]</span>
           </p>
           <% num += 1 %>
           <% end %>

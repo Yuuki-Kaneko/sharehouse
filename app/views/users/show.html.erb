@@ -4,7 +4,8 @@
       <div class="user_out_box">
       
         <div id="photo">
-          <img src="<%= "#{@user.image}" %>">
+          <img src="<%= "#{@user.image}" %>"
+               onerror="this.src='/uploads/user/image/no-image-3.png'">
         </div>
 
         <h2><%= "#{@user.nickname}" %></h2>
