@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2020_12_15_223422) do
   end
 
   create_table "buys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
     t.string "bought"
-    t.string "user_nickname"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_nickname"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2020_12_15_223422) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -66,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_12_15_223422) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nickname"
     t.string "full_name"
     t.text "text"
     t.string "image"
